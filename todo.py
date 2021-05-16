@@ -10,7 +10,7 @@ cont = 10
 
 #Definindo input
 task = Entry(app)
-task.place(x = 65, y = 405, width=150, height=20)
+task.place(x = 70, y = 405, width=150, height=20)
 
 #Definindo ListBox
 list = Listbox(app)
@@ -28,7 +28,19 @@ def print_task():
     
 
 #Definindo botão de enviar dados
-button = Button(app, text='OK', command=print_task)
-button.place(x = 240, y = 400, width = 40, height = 30)
+button = Button(app, text='OK', command = print_task)
+button.place(x = 240, y = 403, width = 35, height = 25)
+button.config(bg = 'green')
+
+#Função para deletar dados
+def delete():
+    list.delete(ANCHOR)
+    
+
+#Definindo botão para deletar dados
+buttondel = Button(app, text='Delete', command = delete)
+buttondel.place(x = 5, y =  403, width = 50, height= 25)
+buttondel.config(bg  = 'red', border=0)
+
 
 app.mainloop()
